@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
 
     <!-- Site Metas -->
-    <title>Food Funday Restaurant - One page HTML Responsive</title>
+    <title>Dark Dessert - Cafe</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -93,7 +93,7 @@
                 <div class="banner-static">
                     <div class="banner-text">
                         <div class="banner-cell">
-                            <h2>Refresh your taste with us</h2>
+                            <h2>Time to spend with food and dudes</h2>
                             <div class="book-btn">
                                 <a href="#reservation" class="table-btn hvr-underline-from-center">Book my Table</a>
                             </div>
@@ -661,7 +661,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
                         <h2 class="block-title text-center">
-						Our Menu 	
+                        PASTRIES 	
 					</h2>
                         <!-- <p class="title-caption text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p> -->
                     </div>
@@ -1085,7 +1085,7 @@
     </div>
     <!-- end blog-main -->
 
-
+    <div class="pricing-main">
     <div id="reservation" class="reservations-main pad-top-100 pad-bottom-100">
         <div class="container">
             <div class="row">
@@ -1101,7 +1101,9 @@
 
                         <iframe name="hiddenFrame" width="0" height="0"></iframe>
 
-                        <form target="hiddenFrame" method="post" action="https://docs.google.com/forms/u/2/d/e/1FAIpQLSccar6ZWSqPM3UsBMsBWitiF9PCribrELMP53-NRue04II1oA/formResponse">
+
+
+                        <form target="hiddenFrame" name="form1" method="post" action="https://docs.google.com/forms/u/2/d/e/1FAIpQLSccar6ZWSqPM3UsBMsBWitiF9PCribrELMP53-NRue04II1oA/formResponse">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-box">
                                     <input type="text" name="entry.1614960091" id="form_name" placeholder="Name" required="required" data-error="Firstname is required.">
@@ -1110,13 +1112,13 @@
                             <!-- end col -->
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-box">
-                                    <input type="text" name="entry.1349481976" id="email" placeholder="E-Mail ID" required="required" data-error="E-mail id is required.">
+                                    <input type="text" name="entry.1349481976" id="email" placeholder="E-Mail ID">
                                 </div>
                             </div>
                             <!-- end col -->
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-box">
-                                    <input type="text" name="entry.697679212" id="phone" placeholder="contact no.">
+                                    <input type="text" name="entry.697679212" id="phone" required="required" placeholder="contact no." data-error="Contact No. is required.">
                                 </div>
                             </div>
                             <!-- end col -->
@@ -1151,7 +1153,7 @@
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="reserve-book-btn text-center">
-                                    <button class="hvr-underline-from-center" type="submit" value="submit" id="submit" onclick="myFunction()">BOOK MY TABLE </button>
+                                    <button class="hvr-underline-from-center" type="submit" value="submit" id="submit" onclick="IsEmpty()">BOOK MY TABLE </button>
                                 </div>
                             </div>
                             <!-- end col -->
@@ -1166,6 +1168,7 @@
         </div>
         <!-- end container -->
     </div>
+</div>
     <!-- end reservations-main -->
 
     <div id="footer" class="footer-main">
@@ -1193,11 +1196,6 @@
             <div class="container">
                 <div class="row">
                     <div class="footer-in-main">
-                        <div class="footer-logo">
-                            <div class="text-center">
-                                <img src="images/logo.png" alt="" />
-                            </div>
-                        </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div class="footer-box-a">
                                 <h3>About Us</h3>
@@ -1307,34 +1305,17 @@
 </body>
 
 <script>
-    function myFunction() {
-  alert("Thankyou, Your Booking Was Confirmed");
+
+function IsEmpty() {
+    if(document.getElementById("form_name").value.length <= 3 && document.getElementById("email").value.length <= 4 && document.getElementById("phone").value.length < 10)
+    {
+            alert("Please Fill Booking Detail")
+    }
+    else{
+        alert('Thankyou, Your Booking was Confirmed')
+    }
 }
 
-    function sendMail() {
-    $.ajax({
-      type: 'POST',
-      url: 'https://mandrillapp.com/api/1.0/messages/send.json',
-      data: {
-        'key': '1c88a24b7db05704048637ad0c1174d3-us1',
-        'message': {
-          'from_email': 'shabeebat12@gmail.com',
-          'to': [
-              {
-                'email': 'darkdessert24@gmail.com',
-                'name': 'DARK DESSERT',
-                'type': 'to'
-              }
-            ],
-          'autotext': 'true',
-          'subject': 'YOUR SUBJECT HERE!',
-          'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
-        }
-      }
-     }).done(function(response) {
-       console.log(response); // if you're into that sorta thing
-     });
-}
 </script>
 
 </html>
