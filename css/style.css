@@ -603,6 +603,11 @@ html, body{ height: 100%; }
 	padding-bottom: 90px;
 }
 
+.pad-top-1000{
+    padding-top: 200px;
+	padding-bottom: 200px;
+}
+
 .pad-top-70{
 	padding-top: 70px;
 }
